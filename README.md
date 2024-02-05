@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+---
+# Hello, my name is Domenic, and my tag name is WizardML7.
+---
 
-You can use the [editor on GitHub](https://github.com/WizardML7/WizardML7.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+# About Me
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I am a fourth year Computing Security major at RIT, specializing in application/software security, red teaming, and penetration testing. Continuously expanding my expertise, I am also delving into malware development, reverse engineering, and bug bounty hunting.
 
-### Markdown
+## Current and Upcoming Projects
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### ChatCSEC - Undergraduate Capstone Project
+- **Description**: Developing a Large Language Model (LLM)-based chatbot, ChatCSEC, as part of a group project. This chatbot aims to assist in computing security education and awareness.
+- **Role**: Working collaboratively with a team of three to design, develop, and deploy the chatbot.
 
-```markdown
-Syntax highlighted code block
+### Vulnerabilities in Tap-To-Pay Systems
+- **Description**: Participating in a group research project for the course Authentication and Security Models. The focus is on reviewing and analyzing vulnerabilities in current Tap-To-Pay systems.
+- **Objective**: To understand and document potential security flaws in Tap-To-Pay technologies, contributing to a comprehensive group research paper.
 
-# Header 1
-## Header 2
-### Header 3
-What is happening
-- Bulleted
-- List
+## Past Projects
 
-1. Numbered
-2. List
+### Web Application Fuzzer with GUI (QT6 Framework)
+- **Overview**: Developed a web application fuzzer equipped with a user-friendly graphical interface, utilizing the QT6 framework.
+- **Purpose**: Designed to identify vulnerabilities in web applications through automated testing processes.
 
-**Bold** and _Italic_ and `Code` text
+### Metadata Analyzer (Python)
+- **Context**: Created during a previous internship, this metadata analyzer was developed in Python.
+- **Functionality**: Assisted in generating comprehensive metadata reports, enhancing the understanding and management of digital data.
 
-[Link](url) and ![Image](src)
-```
+### Mock OSINT Report on Experian
+- **Project for**: Graduate seminar class on Open Source Intelligence (OSINT).
+- **Details**: Conducted a mock/unofficial OSINT investigation on Experian, resulting in a detailed report that highlighted potential security and privacy concerns.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Ongoing Learning and Exploration
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/WizardML7/WizardML7.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file. Let's see if I can see this. 
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- **Blockchain Technologies**: Exploring the underlying mechanisms of blockchain and its related vulnerabilities.
+- **Advanced Malware Forensics**: Deepening knowledge in malware forensics to understand sophisticated malware behaviors and defense strategies.
+- **Cryptography Challenges and Labs**: Currently working on the CryptoPals challenge, a series of practical cryptography problems designed to enhance understanding and application of cryptographic principles and techniques.
