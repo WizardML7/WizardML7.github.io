@@ -8,9 +8,7 @@
     <style>
         body {
             background-color: #f4f4f9;
-        }
-        nav {
-            margin-bottom: 2em;
+            color: #333; /* Darker text color */
         }
         h2, h3 {
             color: #004085;
@@ -25,6 +23,16 @@
         }
         .cta-button:hover, .learn-more-button:hover {
             background-color: #003f7f;
+        }
+        .profile-pic {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+        }
+        .about-me {
+            display: flex;
+            align-items: center;
+            gap: 1.5em;
         }
         footer {
             margin-top: 2em;
@@ -78,10 +86,14 @@
             <p>Created a metadata analyzer to assist in generating detailed metadata reports. <a href="https://wizardml7.github.io/metadataAnalyzer">Learn more</a>.</p>
         </section>
 
-        <!-- About Me Section -->
-        <section id="about">
-            <h3>About Me</h3>
-            <p>I am a Computing Security major at RIT, specializing in OSINT, red teaming, and penetration testing. My goal is to help organizations discover and mitigate security risks by applying a range of cybersecurity techniques, with a particular focus on social engineering and threat modeling.</p>
+        <!-- About Me Section with Headshot -->
+        <section id="about" class="about-me">
+            <!-- Placeholder for Headshot -->
+            <img src="your-headshot-url.jpg" alt="Professional headshot of Domenic Lo Iacono" class="profile-pic">
+            <div>
+                <h3>About Me</h3>
+                <p>I am a Computing Security major at RIT, specializing in OSINT, red teaming, and penetration testing. My goal is to help organizations discover and mitigate security risks by applying a range of cybersecurity techniques, with a particular focus on social engineering and threat modeling.</p>
+            </div>
         </section>
     </main>
 
