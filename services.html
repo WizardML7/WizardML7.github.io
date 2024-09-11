@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Domenic Lo Iacono - OSINT Services</title>
     <style>
         body {
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
         h2, h3, h4 {
-            color: #004085;
+            color: #007bff;
         }
         .case-study {
-            background-color: #e0f7fa;
+            background-color: #e9ecef;
             padding: 1em;
-            border-left: 4px solid #004085;
+            border-left: 4px solid #007bff;
             margin-top: 1em;
         }
         .cta-button {
-            background-color: #0056b3;
+            background-color: #007bff;
             color: white;
             border: none;
             padding: 0.75em 1.5em;
@@ -28,27 +28,42 @@
             cursor: pointer;
         }
         .cta-button:hover {
-            background-color: #003f7f;
+            background-color: #0056b3;
         }
         footer {
             margin-top: 2em;
             text-align: center;
+            padding: 1em;
+            background-color: #343a40;
+            color: white;
+        }
+        footer a {
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <li><strong>Domenic Lo Iacono</strong></li>
-        </ul>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Domenic Lo Iacono</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <main class="container">
+    <main class="container mt-5">
         <!-- OSINT Services Overview -->
         <section>
             <h2>Comprehensive OSINT Testing and Threat Modeling Services</h2>
@@ -57,7 +72,7 @@
         </section>
 
         <!-- Detailed Service Offerings -->
-        <section>
+        <section class="mt-5">
             <h3>Our Service Offerings</h3>
             <ul>
                 <li><strong>OSINT Audits:</strong> A thorough review of publicly available information about your organization to assess risks of exposure, including key individuals, infrastructure, and sensitive data leaks.</li>
@@ -68,7 +83,7 @@
         </section>
 
         <!-- Methodology Section -->
-        <section>
+        <section class="mt-5">
             <h3>Our Methodology</h3>
             <p>We follow a structured and precise methodology to ensure that our findings are comprehensive and actionable. Here’s how we approach OSINT testing and threat modeling:</p>
             <ol>
@@ -80,7 +95,7 @@
         </section>
 
         <!-- Case Study Section -->
-        <section class="case-study">
+        <section class="case-study mt-5">
             <h3>Case Study: Experian OSINT Report</h3>
             <p>In a mock investigation for Experian, I conducted an OSINT analysis that uncovered potential vulnerabilities in both organizational and individual-level data. Here’s an overview of the key findings:</p>
             <ul>
@@ -92,7 +107,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="mt-5">
             <h3>Get in Touch</h3>
             <p>If you're interested in understanding how OSINT can help you protect your organization or want to schedule a consultation, please contact me using the link below:</p>
             <button class="cta-button" onclick="window.location.href='mailto:youremail@example.com'">Contact for OSINT Services</button>
@@ -100,8 +115,13 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="container">
+    <footer>
         <small><a href="index.html">Home</a> • <a href="mailto:youremail@example.com">Contact</a></small>
     </footer>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
