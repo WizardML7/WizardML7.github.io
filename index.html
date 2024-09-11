@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <title>Domenic Lo Iacono - OSINT and Cybersecurity Services</title>
     <style>
         body {
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        h2, h3 {
-            color: #007bff;
+        h2, h3, h4 {
+            color: #004085;
         }
         .cta-button, .learn-more-button {
-            background-color: #007bff;
+            background-color: #0056b3;
             color: white;
             border: none;
             padding: 0.75em 1.5em;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
         }
         .cta-button:hover, .learn-more-button:hover {
-            background-color: #0056b3;
+            background-color: #003f7f;
         }
         .profile-pic {
             max-width: 150px;
@@ -38,40 +37,23 @@
         footer {
             margin-top: 2em;
             text-align: center;
-            padding: 1em;
-            background-color: #343a40;
-            color: white;
-        }
-        footer a {
-            color: #007bff;
-        }
-        footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Domenic Lo Iacono</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Me</a>
-                </li>
-            </ul>
-        </div>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Domenic Lo Iacono</strong></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="about.html">About Me</a></li>
+        </ul>
     </nav>
 
-    <main class="container mt-5">
+    <main class="container">
         <!-- Introduction Section -->
         <section id="home">
             <hgroup>
@@ -82,9 +64,9 @@
         </section>
 
         <!-- OSINT Services Section -->
-        <section id="services" class="mt-5">
+        <section id="services">
             <h3>OSINT Testing and Threat Modeling Services</h3>
-            <p>I specialize in identifying security risks through open-source intelligence (OSINT) and helping businesses protect themselves from potential threats. My services include:</p>
+            <p>I specialized in identifying security risks through open-source intelligence (OSINT) and helped businesses protect themselves from potential threats. My services included:</p>
             <ul>
                 <li><strong>OSINT Audits:</strong> Discover publicly accessible information that may put your business at risk.</li>
                 <li><strong>Threat Modeling:</strong> Develop security strategies based on collected intelligence.</li>
@@ -94,18 +76,32 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="mt-5">
+        <section id="projects">
             <h3>Notable Projects</h3>
             <h4>Mock OSINT Report on Experian</h4>
-            <p>Conducted a detailed OSINT investigation on Experian, identifying potential security and privacy risks from publicly available information.</p>
+            <p>Conducted a detailed OSINT investigation on Experian, identifying potential security and privacy risks from publicly available information. Read the full <a href="URL_TO_EXPERIAN_REPORT" target="_blank" rel="noopener noreferrer">Experian OSINT Report</a> to learn more.</p>
+
             <h4>Web Application Fuzzer with GUI (QT6 Framework)</h4>
             <p>Developed a fuzzer tool for web applications with a user-friendly graphical interface, designed to identify vulnerabilities through automated testing.</p>
+
             <h4>Metadata Analyzer (Python)</h4>
             <p>Created a metadata analyzer to assist in generating detailed metadata reports. <a href="https://wizardml7.github.io/metadataAnalyzer">Learn more</a>.</p>
+
+            <h4>ChatCSEC - Undergraduate Capstone Project</h4>
+            <p>Developed ChatCSEC, an LLM-based chatbot for computing security education, as part of a group project. Collaborated with a team to design, develop, and deploy the chatbot.</p>
+
+            <h4>Vulnerabilities in Tap-To-Pay Systems</h4>
+            <p>Participated in a research project analyzing vulnerabilities in Tap-To-Pay systems. Documented potential security flaws and contributed to a comprehensive research paper.</p>
+
+            <h4>Cuckoo Watchtower</h4>
+            <p>Created Cuckoo Watchtower to assist with malware forensics by integrating GPT-4 to analyze Cuckoo Sandbox JSON reports. Enhanced malware analysis with interactive, chatbot-style insights within a Google Colab environment. The tool provided dynamic reporting, interactive querying, and advanced search capabilities using vector databases.</p>
+
+            <h4>AudioCovert</h4>
+            <p>Developed AudioCovert, a tool to embed and decode hidden messages in audio files. Encoded messages into WAV files, manipulating high-frequency signals to make them imperceptible to the human ear. Messages were decoded by generating and inspecting the audio file's spectrogram.</p>
         </section>
 
         <!-- About Me Section with Headshot -->
-        <section id="about" class="about-me mt-5">
+        <section id="about" class="about-me">
             <!-- Placeholder for Headshot -->
             <img src="your-headshot-url.jpg" alt="Professional headshot of Domenic Lo Iacono" class="profile-pic">
             <div>
@@ -116,15 +112,10 @@
     </main>
 
     <!-- Footer Section -->
-    <footer>
+    <footer class="container">
         <small>
             <a href="https://github.com/WizardML7">GitHub Profile</a> • <a href="mailto:loiacono.domenic@gmail.com">Contact</a>
         </small>
     </footer>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
