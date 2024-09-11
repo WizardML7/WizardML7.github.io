@@ -3,25 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the custom stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Domenic Lo Iacono - OSINT and Cybersecurity Services</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        h2, h3 {
+            color: #007bff;
+        }
+        .cta-button, .learn-more-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .cta-button:hover, .learn-more-button:hover {
+            background-color: #0056b3;
+        }
+        .profile-pic {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+        }
+        .about-me {
+            display: flex;
+            align-items: center;
+            gap: 1.5em;
+        }
+        footer {
+            margin-top: 2em;
+            text-align: center;
+            padding: 1em;
+            background-color: #343a40;
+            color: white;
+        }
+        footer a {
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <div class="navbar-brand">
-                <strong>Domenic Lo Iacono</strong>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="about.html">About Me</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Domenic Lo Iacono</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Me</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container mt-5">
         <!-- Introduction Section -->
         <section id="home">
             <hgroup>
@@ -32,7 +82,7 @@
         </section>
 
         <!-- OSINT Services Section -->
-        <section id="services">
+        <section id="services" class="mt-5">
             <h3>OSINT Testing and Threat Modeling Services</h3>
             <p>I specialize in identifying security risks through open-source intelligence (OSINT) and helping businesses protect themselves from potential threats. My services include:</p>
             <ul>
@@ -44,7 +94,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects">
+        <section id="projects" class="mt-5">
             <h3>Notable Projects</h3>
             <h4>Mock OSINT Report on Experian</h4>
             <p>Conducted a detailed OSINT investigation on Experian, identifying potential security and privacy risks from publicly available information.</p>
@@ -55,7 +105,7 @@
         </section>
 
         <!-- About Me Section with Headshot -->
-        <section id="about" class="about-me">
+        <section id="about" class="about-me mt-5">
             <!-- Placeholder for Headshot -->
             <img src="your-headshot-url.jpg" alt="Professional headshot of Domenic Lo Iacono" class="profile-pic">
             <div>
@@ -66,10 +116,15 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer>
         <small>
             <a href="https://github.com/WizardML7">GitHub Profile</a> • <a href="mailto:youremail@example.com">Contact</a>
         </small>
     </footer>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
