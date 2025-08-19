@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Domenic Lo Iacono - Cybersecurity & Projects</title>
+    <title>Domenic Lo Iacono - Offensive Security Engineer</title>
     <style>
 	body {
             background-color: #f8f9fa;
@@ -29,6 +29,38 @@
             max-width: 150px;
             border-radius: 50%;
             margin-bottom: 1em;
+        }
+        .lead {
+            font-size: 1.25em;
+            font-weight: 300;
+            color: #6c757d;
+            margin-bottom: 2em;
+        }
+        .employment-history, .projects {
+            margin: 3em 0;
+        }
+        .skills-section {
+            background-color: #e9ecef;
+            padding: 2em;
+            border-radius: 8px;
+            margin: 3em 0;
+        }
+        .skill-category {
+            margin-bottom: 1.5em;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin-top: 0.5em;
+        }
+        .skill-tag {
+            background-color: #007bff;
+            color: white;
+            padding: 0.3em 0.8em;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
         }
         .about-me {
             display: flex;
@@ -73,14 +105,21 @@
         <!-- Introduction Section -->
         <section id="home">
             <hgroup>
-                <h2>Domenic Lo Iacono: Cybersecurity Student & Engineer</h2>
-                
+                <h2>Domenic Lo Iacono: Offensive Security Engineer</h2>
+                <p class="lead">MS & BS Computing Security Graduate from RIT | Offensive Security Engineer at Praetorian</p>
             </hgroup>
         </section>
 
 	<!-- Employment Experience Section -->
         <section class="employment-history">
 	    <h3>Employment Experience</h3>
+	    <h4>Praetorian</h4>
+	    <p><strong>Offensive Security Engineer</strong> (2025 - Present)</p>
+	    <ul>
+	        <li>Conducting advanced penetration testing, red team operations, and vulnerability research for enterprise clients across diverse industries including cryptocurrency, medical devices, and technology platforms.</li>
+	        <li>Developing custom exploits, tools, and methodologies for complex security engagements while contributing to the cybersecurity community through research and knowledge sharing.</li>
+	        <li>Specializing in application security testing, cloud security assessments, and IoT security evaluations using cutting-edge offensive security techniques.</li>
+	    </ul>
 	    <h4>Malware Benchmark Dataset Research</h4>
 	    <p><strong>Research Assistant</strong> (May 2024 - August 2024)</p>
 	    <ul>
@@ -122,9 +161,49 @@
 	    <h4>Attacking Ethereum Lottery Game "1000 Guess"</h4>
 	    <p>Explored the vulnerabilities of Ethereum-based lottery dApps by implementing a game, exploiting its weaknesses, and creating a secure version using Chainlink's VRF for randomness. Read the full report <a href="Project Final Report.pdf" target="_blank" rel="noopener noreferrer">here</a>.</p>
 	
+	    <h4>Advanced Cybersecurity Research: Acoustic Side-Channel Analysis - Masters Capstone</h4>
+	    <p>Conducted comprehensive cybersecurity research investigating acoustic side-channel vulnerabilities in VoIP communications and cryptographic operations. Developed novel methodologies for systematic acoustic analysis, successfully demonstrating measurable acoustic leakage during VoIP communications. Utilized Python, C, and advanced signal processing techniques for real-time spectrogram analysis and cryptographic timing evaluation. <a href="https://github.com/WizardML7/CSEC-793-LMYE" target="_blank" rel="noopener noreferrer">View Project</a></p>
+
 	    <h4>Mock OSINT Report on Experian</h4>
 	    <p>Conducted a detailed OSINT investigation on Experian, identifying potential security and privacy risks from publicly available information. Read the full <a href="CensoredPractical_Experian_DomenicLoIacono.pdf" target="_blank" rel="noopener noreferrer">Experian OSINT Report</a> to learn more.</p>
 	</section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h3>Technical Expertise</h3>
+            <div class="skill-category">
+                <h5>Offensive Security</h5>
+                <div class="skill-tags">
+                    <span class="skill-tag">Penetration Testing</span>
+                    <span class="skill-tag">Red Team Operations</span>
+                    <span class="skill-tag">Vulnerability Research</span>
+                    <span class="skill-tag">Exploit Development</span>
+                    <span class="skill-tag">Social Engineering</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h5>Technical Domains</h5>
+                <div class="skill-tags">
+                    <span class="skill-tag">Web Application Security</span>
+                    <span class="skill-tag">Cloud Security (AWS, Azure, GCP)</span>
+                    <span class="skill-tag">IoT & Embedded Systems</span>
+                    <span class="skill-tag">Cryptographic Analysis</span>
+                    <span class="skill-tag">Reverse Engineering</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h5>Programming & Tools</h5>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">PowerShell</span>
+                    <span class="skill-tag">Burp Suite</span>
+                    <span class="skill-tag">Metasploit</span>
+                    <span class="skill-tag">Nmap</span>
+                </div>
+            </div>
+        </section>
 
         <!-- About Me Section with Headshot -->
         <section id="about" class="about-me">
@@ -132,7 +211,7 @@
             <img src="HeadshotPhoto - Copy.JPG" alt="Professional headshot of Domenic Lo Iacono" class="profile-pic">
             <div>
                 <h3>About Me</h3>
-                <p>I am a Computing Security major at RIT, focusing on red teaming, penetration testing, and developing tools for cybersecurity.</p>
+                <p>I am an Offensive Security Engineer at Praetorian with MS & BS degrees in Computing Security from RIT. I specialize in red teaming, penetration testing, vulnerability research, and developing innovative cybersecurity tools.</p>
             </div>
         </section>
     </main>
@@ -140,7 +219,7 @@
     <!-- Footer Section -->
     <footer class="container">
         <small>
-            <a href="https://github.com/WizardML7">GitHub Profile</a> • <a href="mailto:loiacono.domenic@gmail.com">Contact</a>
+            <a href="https://github.com/WizardML7">GitHub Profile</a> • <a href="https://linkedin.com/in/domenic-loiacono" target="_blank">LinkedIn</a> • <a href="mailto:loiacono.domenic@gmail.com">Contact</a>
         </small>
     </footer>
 </body>

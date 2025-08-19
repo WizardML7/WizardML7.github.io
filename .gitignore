@@ -1,0 +1,27 @@
+# Claude Flow and Hive Mind generated directories
+.claude-flow/
+.hive-mind/
+docs/
+.swarm
+
+# Local development
+.DS_Store
+*.log
+node_modules/
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
