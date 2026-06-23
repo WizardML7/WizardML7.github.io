@@ -65,6 +65,24 @@ Set options *before* the script tag:
 Edit the `THEMES` map at the top of `wizard-theme.js` to add/tweak colors — change it
 once and re-copy to each repo.
 
+### Project-page layout helpers
+`wizard-theme.css` also ships layout classes used by the live project pages:
+`.wz-nav` / `.wz-nav-brand` / `.wz-nav-links` (sticky top nav), `.wz-main` (centered
+body wrapper), `.wz-hero` / `.wz-lede` / `.wz-hero-actions` (hero block), `.wz-prose`
+(themed content: headings, lists, inline `code`, `<pre>` blocks, images), and
+`.wz-footer`. Build a project page as: `.wz-nav` → `.wz-main` ( `.wz-hero` + `.wz-prose` )
+→ `.wz-footer`. See any of the live pages below for the exact pattern.
+
+### Already themed & live (pushed to each repo's `main`)
+- https://wizardml7.github.io/Cuckoo-Watchtower/
+- https://wizardml7.github.io/QtFuzzer/
+- https://wizardml7.github.io/AudioCovertChannel/
+- https://wizardml7.github.io/metadataAnalyzer/
+- https://wizardml7.github.io/ChatCSEC/
+
+To theme a new repo, copy `wizard-theme.css` + `wizard-theme.js` into it and follow the
+same `.wz-nav` / `.wz-main` / `.wz-prose` structure.
+
 ---
 
 ## Paste-into-Claude-Code prompt
