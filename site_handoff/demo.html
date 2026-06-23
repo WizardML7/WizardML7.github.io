@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuckoo Watchtower — WizardML7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<!-- 1) the theme tokens + baseline -->
+<link rel="stylesheet" href="wizard-theme.css">
+</head>
+<body class="wz">
+  <!-- Example project page styled with the theme variables/classes -->
+  <main style="max-width:760px;margin:0 auto;padding:120px 24px 80px;position:relative;z-index:1;">
+    <div class="wz-eyebrow" style="margin-bottom:14px;">// MALWARE FORENSICS</div>
+    <h1 style="font-size:48px;line-height:1.04;font-weight:800;letter-spacing:-.02em;margin:0 0 16px;">Cuckoo Watchtower</h1>
+    <p style="font-size:19px;line-height:1.6;color:var(--wz-fg-dim);margin:0 0 32px;max-width:560px;">
+      A malware-forensics assistant that integrates GPT-4 to analyze Cuckoo Sandbox JSON reports,
+      surfacing interactive, chatbot-style insights from raw analysis output.
+    </p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a class="wz-btn" href="https://github.com/WizardML7/Cuckoo-Watchtower" target="_blank">View on GitHub</a>
+      <a class="wz-btn-ghost" href="https://wizardml7.github.io/">← Back to portfolio</a>
+    </div>
+
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;">
+      <div class="wz-glow" style="background:var(--wz-card);border:1px solid var(--wz-line);border-radius:12px;padding:24px;">
+        <h3 style="margin:0 0 8px;font-size:18px;">Report parsing</h3>
+        <p style="margin:0;color:var(--wz-fg-dim);font-size:15px;line-height:1.5;">Ingests Cuckoo Sandbox JSON and normalizes behavioral indicators.</p>
+      </div>
+      <div style="background:var(--wz-card);border:1px solid var(--wz-line);border-radius:12px;padding:24px;">
+        <h3 style="margin:0 0 8px;font-size:18px;">GPT-4 insights</h3>
+        <p style="margin:0;color:var(--wz-fg-dim);font-size:15px;line-height:1.5;">Ask questions about a sample and get analyst-grade explanations.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 2) the live theme + starfield + switcher (one line) -->
+  <script src="wizard-theme.js" defer></script>
+</body>
+</html>
