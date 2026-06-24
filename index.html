@@ -18,6 +18,86 @@
       This page requires JavaScript to display.
     </div>
   </noscript>
+  <!-- Mobile fixes for the bundled landing page.
+       The bundle REPLACES the whole document when it unpacks, so a plain
+       injected <style> gets wiped. This script is self-healing: it keeps a
+       lightweight interval that (1) re-injects its stylesheet into the
+       current <head>, and (2) applies inline !important styles to the nav
+       and the theme-switcher pill (whose own positioning is inline, so it
+       needs !important to override). The page content (encoded payload) is
+       never touched — only the real <nav> and the switcher pill are. -->
+  <script>
+    (function () {
+      var MQ = '(max-width: 640px)';
+      var CSS =
+        '@media ' + MQ + '{' +
+          'nav{overflow-x:auto !important;-webkit-overflow-scrolling:touch;scrollbar-width:none;' +
+            'max-width:100vw !important;padding-left:14px !important;padding-right:14px !important;}' +
+          'nav::-webkit-scrollbar{display:none;}' +
+        '}';
+
+      function ensureStyle() {
+        if (document.getElementById('wz-mobile-fix')) return;
+        var st = document.createElement('style');
+        st.id = 'wz-mobile-fix';
+        st.textContent = CSS;
+        (document.head || document.documentElement).appendChild(st);
+      }
+
+      function fixSwitcher() {
+        var small = window.matchMedia(MQ).matches;
+        var btn = document.querySelector('button[title="Arcane Teal"], button[title="Spellbound Violet"]');
+        if (!btn) return;
+        var pill = btn;
+        while (pill && pill !== document.body && getComputedStyle(pill).position !== 'fixed') pill = pill.parentElement;
+        if (!pill || pill === document.body) return;
+        if (small) {
+          // Compact and corner-pinned so it can't sit over the hero content.
+          pill.style.setProperty('right', '10px', 'important');
+          pill.style.setProperty('left', 'auto', 'important');
+          pill.style.setProperty('bottom', '10px', 'important');
+          pill.style.setProperty('padding', '7px 11px', 'important');
+          pill.style.setProperty('gap', '9px', 'important');
+          pill.style.setProperty('max-width', 'calc(100vw - 20px)', 'important');
+          // Hide the leading icon + the "THEME" text label to slim the pill to
+          // just the six color swatches. The label is the pill's first element
+          // child (the swatches live in a row container after it); hide whichever
+          // of the first children is not the swatch row.
+          var kids = pill.children, swatchRow = null;
+          for (var i = 0; i < kids.length; i++) {
+            if (kids[i].querySelector && kids[i].querySelector('button[title]')) { swatchRow = kids[i]; break; }
+          }
+          for (var j = 0; j < kids.length; j++) {
+            if (kids[j] !== swatchRow) kids[j].style.setProperty('display', 'none', 'important');
+          }
+          // The "THEME" label may be a raw text node directly on the pill
+          // (not an element). Blank it once, remembering it for restore.
+          pill.childNodes.forEach(function (n) {
+            if (n.nodeType === 3 && (n.textContent || '').trim()) {
+              if (n.__wzText == null) n.__wzText = n.textContent;
+              n.textContent = '';
+            }
+          });
+        } else {
+          ['right','left','bottom','padding','gap','max-width'].forEach(function (p) {
+            pill.style.removeProperty(p);
+          });
+          for (var k = 0; k < pill.children.length; k++) pill.children[k].style.removeProperty('display');
+          pill.childNodes.forEach(function (n) {
+            if (n.nodeType === 3 && n.__wzText != null) n.textContent = n.__wzText;
+          });
+        }
+      }
+
+      function tick() { ensureStyle(); fixSwitcher(); }
+      // Run continuously but cheaply: the bundle can re-render and wipe our
+      // work, so we keep re-applying. 400ms is imperceptible and very light.
+      setInterval(tick, 400);
+      tick();
+      document.addEventListener('DOMContentLoaded', tick);
+      window.addEventListener('resize', tick);
+    })();
+  </script>
 </head>
 <body>
   <div id="__bundler_thumbnail">
