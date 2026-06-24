@@ -181,6 +181,37 @@ body.wz a.wz-btn-ghost, body.wz a.wz-btn-ghost:hover { color: var(--wz-fg); }
 ```
 Keep these. If you add new button variants, give them the same `body.wz a.<class>` override.
 
+## Mobile / responsive
+
+The kit is already responsive — a new page built with the standard structure works on phones
+with no extra effort. What's in place:
+
+- **`wizard-theme.css`** has an `@media (max-width: 640px)` block: scrollable + roomier nav
+  tap targets, tighter hero/section spacing, full-width stacked hero buttons, smaller code
+  blocks, and `overflow-wrap: anywhere` so long URLs/words never cause horizontal scroll. It
+  also honors `prefers-reduced-motion`.
+- **The switcher's mobile rules live in `wizard-theme.js`** (its injected CSS), not the CSS
+  file — so they apply on *any* page that loads the JS, including the landing page. On phones
+  the switcher collapses to a compact corner pill (the "THEME" label is hidden) so it can't
+  overlap content.
+
+When theming a new page, still **preview it at 375px and 320px** (resize the browser) and
+confirm: no horizontal page scroll, the switcher pill fits in the bottom-right, and `<pre>`
+code blocks scroll inside their own box (that's expected — only the page must not scroll
+sideways).
+
+### The landing page is a special case
+The landing page (`index.html`) does **not** use the kit — it's the opaque bundle with its
+own built-in switcher, and it **rewrites the entire document when it unpacks**, wiping any
+plain injected `<style>`. Its mobile fixes therefore live in a small **self-healing script**
+in the bundle's outer `<head>` (search `wz-mobile-fix`). That script runs on an interval to
+(1) re-inject its stylesheet after each bundle re-render and (2) apply inline `!important`
+styles to the real `<nav>` (horizontal scroll) and the fixed switcher pill (slim to its 6
+swatches, corner-pin). It targets the switcher by walking up from a `button[title="Arcane
+Teal"]` to its `position:fixed` ancestor — robust against the bundle's obfuscated class names.
+If you regenerate the landing-page bundle, **re-add that `<head>` script** (it's not part of
+the encoded payload, so a fresh bundle won't include it).
+
 ## Adding a new project to the landing page
 The landing page is the opaque bundle described above — its project cards are baked into the
 encoded payload, so you can't hand-edit them here. To add/remove a project card, regenerate
