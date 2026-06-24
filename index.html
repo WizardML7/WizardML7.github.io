@@ -31,9 +31,21 @@
       var MQ = '(max-width: 640px)';
       var CSS =
         '@media ' + MQ + '{' +
+          /* The top nav: scroll horizontally, hide the scrollbar, and keep a
+             real gap after the brand so the first link isn't glued to it. */
           'nav{overflow-x:auto !important;-webkit-overflow-scrolling:touch;scrollbar-width:none;' +
-            'max-width:100vw !important;padding-left:14px !important;padding-right:14px !important;}' +
+            'max-width:100vw !important;padding-left:14px !important;padding-right:14px !important;' +
+            'gap:26px !important;justify-content:flex-start !important;}' +
           'nav::-webkit-scrollbar{display:none;}' +
+          'nav>:first-child{margin-right:26px !important;flex:0 0 auto;}' +  /* brand → links gap */
+          /* Any row we tag as a scrollable card strip. */
+          '[data-wz-scroll]{overflow-x:auto !important;overflow-y:visible !important;' +
+            '-webkit-overflow-scrolling:touch;max-width:100% !important;min-width:0 !important;' +
+            'scrollbar-width:none;}' +
+          '[data-wz-scroll]::-webkit-scrollbar{display:none;}' +
+          /* keep cards inside a scrollable strip from being squished — let them
+             size naturally and scroll instead. */
+          '[data-wz-scroll]>*{flex:0 0 auto;}' +
         '}';
 
       function ensureStyle() {
@@ -42,6 +54,29 @@
         st.id = 'wz-mobile-fix';
         st.textContent = CSS;
         (document.head || document.documentElement).appendChild(st);
+      }
+
+      // Make any grid/flex row that overflows the screen horizontally scrollable.
+      // This covers Projects (a 3-col grid) and any other card strip — the cards
+      // have real <a> links, so they MUST stay reachable on a phone.
+      function fixScrollableRows() {
+        var small = window.matchMedia(MQ).matches;
+        var vw = window.innerWidth;
+        var nodes = document.querySelectorAll('div,section,ul,ol');
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          if (el.closest('nav')) continue;                 // nav handled separately
+          if (!small) { if (el.hasAttribute('data-wz-scroll')) el.removeAttribute('data-wz-scroll'); continue; }
+          var cs = getComputedStyle(el);
+          var isRow = cs.display === 'grid' || cs.display === 'flex' || cs.display === 'inline-flex';
+          // overflowing horizontally, but the element itself fits the viewport
+          // (so we scroll its contents, not push the page wider)
+          var overflowsX = el.scrollWidth > el.clientWidth + 8;
+          var fitsViewport = el.getBoundingClientRect().width <= vw + 2;
+          if (isRow && overflowsX && fitsViewport && el.clientWidth > 80) {
+            el.setAttribute('data-wz-scroll', '');
+          }
+        }
       }
 
       function fixSwitcher() {
@@ -89,7 +124,7 @@
         }
       }
 
-      function tick() { ensureStyle(); fixSwitcher(); }
+      function tick() { ensureStyle(); fixSwitcher(); fixScrollableRows(); }
       // Run continuously but cheaply: the bundle can re-render and wipe our
       // work, so we keep re-applying. 400ms is imperceptible and very light.
       setInterval(tick, 400);
